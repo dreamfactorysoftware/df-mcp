@@ -4,7 +4,7 @@ A Model Context Protocol (MCP) server for DreamFactory integration with Claude.
 
 ## Desktop Extension Installation (Claude Desktop Only)
 
-The easiest way to start using DreamFactory's MCP Server is by going to this repository's [releases](https://github.com/wjgilmore/df-mcp/releases) and downloading the most recent Desktop Extension file. Desktop Extensions are a new file format created by Anthropic (the company behind Claude.ai). Once downloaded, double-click the DXT file to start installation. Note you'll need to install [Claude Desktop](https://claude.ai/download) before doing so. After starting installation you'll see this prompt:
+The easiest way to start using DreamFactory's MCP Server is by going to this repository's [releases](https://github.com/dreamfactorysoftware/df-mcp/releases) and downloading the most recent Desktop Extension file. Desktop Extensions are a new file format created by Anthropic (the company behind Claude.ai). Once downloaded, double-click the DXT file to start installation. Note you'll need to install [Claude Desktop](https://claude.ai/download) before doing so. After starting installation you'll see this prompt:
 
 ![Claude Desktop Extension Prompt](/images/dxt-install-prompt1.png)
 
