@@ -15,3 +15,6 @@ wheels/
 
 # ignore vscode settings
 .vscode/
+
+releases/
+.DS_Store
