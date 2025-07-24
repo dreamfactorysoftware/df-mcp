@@ -2,7 +2,29 @@
 
 A Model Context Protocol (MCP) server for DreamFactory integration with Claude.
 
-## Installation
+## Desktop Extension Installation (Claude Desktop Only)
+
+The easiest way to start using DreamFactory's MCP Server is by going to this repository's [releases](https://github.com/wjgilmore/df-mcp/releases) and downloading the most recent Desktop Extension file. Desktop Extensions are a new file format created by Anthropic (the company behind Claude.ai). Once downloaded, double-click the DXT file to start installation. Note you'll need to install [Claude Desktop](https://claude.ai/download) before doing so. After starting installation you'll see this prompt:
+
+![Claude Desktop Extension Prompt](/images/dxt-install-prompt1.png)
+
+Click the `Install` button and you'll see:
+
+![Claude Desktop Extension Prompt #2](/images/dxt-install-prompt2.png)
+
+Click `Install` and if all goes well you'll be prompted to input a DreamFactory API key and service URL:
+
+![Configuring your DreamFactory MCP Server](/images/dxt-install-configure.png)
+
+If you don't have this information readily available, just click `Cancel`. You can add it later by clicking on the Extensions tab inside Settings and then clicking `Configure`:
+
+![Viewing your Extensions](/images/dxt-install-success.png)
+
+In either case, before you can use the DreamFactory MCP Server you'll need to manually enable it by flipping the Disabled switch to Enabled:
+
+![Enabling the extension](/images/dxt-disabled-switch.png)
+
+## Manual Installation
 
 1. Clone this repository and then install dependencies:
    ```
@@ -15,7 +37,7 @@ A Model Context Protocol (MCP) server for DreamFactory integration with Claude.
    npm run build
    ```
 
-## Setting up Claude Desktop
+### Setting up Claude Desktop
 
 1. Install Claude Desktop from [https://claude.ai/download](https://claude.ai/download).
 
@@ -72,7 +94,7 @@ Finally, update the `claude_desktop_config.json` file to point to this script:
 ```
 {
   "mcpServers": {
-        "add": {
+        "df-mcp": {
             "command": "/usr/local/bin/node-for-claude.sh",
             "args": [
                 "/Users/wjgilmore/Software/df-mcp/build/index.js"
