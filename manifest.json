@@ -15,8 +15,8 @@
           "${__dirname}/build/index.js"
         ],
         "env": {
-            "DF_API_KEY": "${user_config.api_key}",
-            "DF_API_URL": "${user_config.api_url}"
+            "DREAMFACTORY_API_KEY": "${user_config.api_key}",
+            "DREAMFACTORY_URL": "${user_config.api_url}"
           }
       }
     },
