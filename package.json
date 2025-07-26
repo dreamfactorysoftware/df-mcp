@@ -7,10 +7,13 @@
     "dreamfactory": "./build/index.js"
   },
   "scripts": {
-  "build": "tsc && node -e \"require('fs').chmodSync('build/index.js', '755')\"",
-  "start": "node build/index.js"
-}
-,
+    "build": "tsc && node -e \"require('fs').chmodSync('build/index.js', '755')\"",
+    "start": "node build/index.js",
+    "proxy": "npx mcp-proxy --port 8080 -- node build/index.js",
+    "proxy:debug": "npx mcp-proxy --port 8080 --debug -- node build/index.js",
+    "proxy:sse": "npx mcp-proxy --port 8080 --server sse -- node build/index.js",
+    "proxy:stream": "npx mcp-proxy --port 8080 --server stream -- node build/index.js"
+  },
   "files": [
     "build"
   ],
@@ -23,6 +26,8 @@
     "typescript": "^5.7.2"
   },
   "dependencies": {
-    "@modelcontextprotocol/sdk": "^1.4.0"
+    "@modelcontextprotocol/sdk": "^1.4.0",
+    "mcp-proxy": "^5.4.0",
+    "zod": "^3.0.0"
   }
 }

@@ -112,8 +112,39 @@ Finally, update the `claude_desktop_config.json` file to point to this script:
 
 Once configured, the DreamFactory MCP server will be available to Claude Desktop. You can use DreamFactory's capabilities through Claude's interface.
 
+## HTTP/SSE Proxy Support
+
+This MCP server can also be accessed via HTTP and Server-Sent Events (SSE) using [`mcp-proxy`](https://www.npmjs.com/package/mcp-proxy). This is useful for web applications or clients that need to interact with the MCP server over HTTP instead of stdio.
+
+### Quick Start with Proxy
+
+1. Set your environment variables:
+   ```bash
+   export DREAMFACTORY_API_KEY="your-api-key"
+   export DREAMFACTORY_URL="https://your-dreamfactory-instance.com/api/v2"
+   ```
+
+2. Run the proxy server:
+   ```bash
+   npm run proxy
+   ```
+
+3. Access endpoints:
+   - **HTTP endpoint**: `http://localhost:8080/mcp`
+   - **SSE endpoint**: `http://localhost:8080/sse`
+
+### Proxy Scripts Available
+
+- `npm run proxy` - Start both HTTP and SSE endpoints on port 8080
+- `npm run proxy:debug` - Same as above with debug logging
+- `npm run proxy:sse` - SSE endpoint only
+- `npm run proxy:stream` - HTTP endpoint only
+
+For detailed proxy usage instructions, see [PROXY_USAGE.md](./PROXY_USAGE.md).
+
 ## Development
 
 - Source code is located in the `src` directory
 - Built files are in the `build` directory
-- Use `npm start` to run the built server directly
+- Use `npm start` to run the built server directly (stdio mode)
+- Use `npm run proxy` to run the server with HTTP/SSE proxy
