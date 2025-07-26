@@ -9,10 +9,10 @@
   "scripts": {
     "build": "tsc && node -e \"require('fs').chmodSync('build/index.js', '755')\"",
     "start": "node build/index.js",
-    "proxy": "npx mcp-proxy --port 8080 -- node build/index.js",
-    "proxy:debug": "npx mcp-proxy --port 8080 --debug -- node build/index.js",
-    "proxy:sse": "npx mcp-proxy --port 8080 --server sse -- node build/index.js",
-    "proxy:stream": "npx mcp-proxy --port 8080 --server stream -- node build/index.js"
+    "proxy": "npx mcp-proxy --port 8080 --shell node build/index.js",
+    "proxy:debug": "npx mcp-proxy --port 8080 --debug --shell node build/index.js",
+    "proxy:sse": "npx mcp-proxy --port 8080 --server sse --shell node build/index.js",
+    "proxy:stream": "npx mcp-proxy --port 8080 --server stream --shell node build/index.js"
   },
   "files": [
     "build"
