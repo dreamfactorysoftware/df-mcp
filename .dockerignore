@@ -1,0 +1,36 @@
+# Dependencies
+node_modules/
+
+# Build output (will be built fresh in Docker)
+build/
+
+# Development files
+.git/
+.gitignore
+*.md
+images/
+manifest.json
+
+# IDE and system files
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.DS_Store
+
+# Test files
+*.test.ts
+*.spec.ts
+
+# Local configuration
+.env
+.env.local
+.claude/
+
+# Logs
+*.log
+npm-debug.log*
+
+# TypeScript cache
+*.tsbuildinfo

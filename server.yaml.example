@@ -1,0 +1,42 @@
+# Example server.yaml for MCP Registry submission
+# This file should be placed in the 'servers' directory of the mcp-registry fork
+#
+# IMPORTANT: Update these fields with your actual values:
+# - image: Change 'dreamfactorysoftware' to your GitHub username/organization
+# - repository: Update to your actual GitHub repository URL
+# - icon: Optional - provide your own icon URL or remove this field
+
+name: df-mcp
+image: ghcr.io/dreamfactorysoftware/df-mcp:latest  # UPDATE: Replace 'dreamfactorysoftware' with your GitHub username
+type: docker
+category: database
+tags:
+  - dreamfactory
+  - database
+  - api
+  - data-management
+  - sql
+description: |
+  DreamFactory MCP Server provides seamless integration between DreamFactory API capabilities and Claude Desktop.
+  It enables database operations, stored procedure execution, and comprehensive data management through a Model Context Protocol interface.
+  
+  Features:
+  - Query database tables and schemas
+  - Execute stored procedures and functions
+  - Fetch data with filtering, pagination, and related data support
+  - Full DreamFactory API integration
+
+icon: https://raw.githubusercontent.com/dreamfactorysoftware/df-mcp/main/images/dreamfactory-icon.png  # UPDATE: Optional - provide your own icon or remove this line
+
+config:
+  secrets:
+    - name: DREAMFACTORY_API_KEY
+      description: Your DreamFactory API key for authentication
+      required: true
+  environment:
+    - name: DREAMFACTORY_URL
+      description: Base URL for your DreamFactory instance (e.g., https://example.dreamfactory.com/api/v2/service-name)
+      required: true
+      type: url
+
+repository: https://github.com/dreamfactorysoftware/df-mcp  # UPDATE: Replace with your GitHub repository URL
