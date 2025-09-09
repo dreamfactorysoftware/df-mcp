@@ -1,0 +1,15 @@
+{
+  "mcpServers": {
+    "dreamfactory-mcp": {
+      "command": "docker",
+      "args": [
+        "run",
+        "--rm",
+        "-i",
+        "--env", "DREAMFACTORY_URL=YOUR_DREAMFACTORY_URL",
+        "--env", "DREAMFACTORY_API_KEY=YOUR_API_KEY",
+        "dreamfactory-mcp:latest"
+      ]
+    }
+  }
+}
