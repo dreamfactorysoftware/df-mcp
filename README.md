@@ -112,7 +112,7 @@ Finally, update the `claude_desktop_config.json` file to point to this script:
 
 Once configured, the DreamFactory MCP server will be available to Claude Desktop. You can use DreamFactory's capabilities through Claude's interface.
 
-## Docker Support
+## Docker MCP Setup for Claude Desktop
 
 ### Building the Docker Image
 
@@ -120,14 +120,35 @@ Once configured, the DreamFactory MCP server will be available to Claude Desktop
 docker build -t df-mcp .
 ```
 
-### Running with Docker
+### Configure Claude Desktop
+Add this configuration to your Claude Desktop config file:
+
+**Location:**
+- **macOS:** ~/Library/Application Support/Claude/claude_desktop_config.json
+- **Windows:** %APPDATA%\Claude\claude_desktop_config.json
+- **Linux:** ~/.config/Claude/claude_desktop_config.json
+
+**Configuration**
 
 ```bash
-docker run -i --rm \
-  -e DREAMFACTORY_URL="https://your-instance.dreamfactory.com/api/v2/service-name" \
-  -e DREAMFACTORY_API_KEY="your-api-key" \
-  df-mcp
+{
+  "mcpServers": {
+    "dreamfactory-mcp": {
+      "command": "docker",
+      "args": [
+        "run",
+        "--rm",
+        "-i",
+        "--env", "DREAMFACTORY_URL=https://your-dreamfactory-instance.com/api/v2/<service-name>",
+        "--env", "DREAMFACTORY_API_KEY=your-api-key-here",
+        "dreamfactory-mcp:latest"
+      ]
+    }
+  }
+}
 ```
+### Restart Claude Desktop
+After updating the configuration, restart Claude Desktop to load the MCP server.
 
 ### Testing the Docker Container
 
@@ -138,19 +159,6 @@ Run the included test script to validate the Docker setup:
 ```
 
 This will verify that the container builds correctly, responds to MCP commands, and all tools are properly registered.
-
-### Docker MCP Registry
-
-This project is compatible with the [Docker MCP Registry](https://github.com/wjgilmore/mcp-registry). 
-
-#### Preparing for Registry Submission
-
-1. **Push to GitHub**: Ensure this repository is on GitHub
-2. **Publish Docker Image**: The included GitHub Actions workflow will automatically build and publish to GitHub Container Registry when you push tags or to the main branch
-3. **Make Image Public**: Set your GitHub Container Registry package to public visibility
-4. **Submit to Registry**: See `DOCKER_REGISTRY_READY.md` for detailed submission steps
-
-The `server.yaml.example` file provides a template for the registry configuration. Remember to update it with your actual GitHub username and repository URL.
 
 ## Development
 
