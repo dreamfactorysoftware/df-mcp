@@ -165,3 +165,7 @@ This will verify that the container builds correctly, responds to MCP commands, 
 - Source code is located in the `src` directory
 - Built files are in the `build` directory
 - Use `npm start` to run the built server directly
+
+## Security
+
+Found a security issue? Email us at security@dreamfactory.com.
