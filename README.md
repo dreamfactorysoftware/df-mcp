@@ -1,3 +1,5 @@
+[![MseeP.ai Security Assessment Badge](https://mseep.net/pr/dreamfactorysoftware-df-mcp-badge.png)](https://mseep.ai/app/dreamfactorysoftware-df-mcp)
+
 # DreamFactory MCP
 
 A Model Context Protocol (MCP) server for DreamFactory integration with Claude.
